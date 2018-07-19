@@ -1,9 +1,4 @@
-/**
- * 
- */
 package com.xavier.abt.teamLeaderDos.model;
-
-import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,35 +7,32 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Transient;
-import javax.validation.constraints.NotNull;
 
-/**
- * @author 
- *
- */
 @Entity
-@Table(name = "bairro")
-public class Bairro implements Serializable {
-
-	private static final long serialVersionUID = 1L;
-	
+@Table(name = "team_leader")
+public class TeamLeader {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
 	
-	@NotNull
+	private Long numero;
+	
 	private String nome;
 	
-	
 	@ManyToOne
-	@JoinColumn(name = "codigo_localidade")
-	@NotNull
-	private Localidade localidade;
-	
-	@Transient
-	@NotNull
+	@JoinColumn(name = "codigo_distrito")
 	private Distrito distrito;
+	
+	private Boolean activo;
+
+
+	public Boolean getActivo() {
+		return activo;
+	}
+
+	public void setActivo(Boolean activo) {
+		this.activo = activo;
+	}
 
 	public Long getCodigo() {
 		return codigo;
@@ -48,6 +40,14 @@ public class Bairro implements Serializable {
 
 	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
+	}
+
+	public Long getNumero() {
+		return numero;
+	}
+
+	public void setNumero(Long numero) {
+		this.numero = numero;
 	}
 
 	public String getNome() {
@@ -58,14 +58,6 @@ public class Bairro implements Serializable {
 		this.nome = nome;
 	}
 
-	public Localidade getLocalidade() {
-		return localidade;
-	}
-
-	public void setLocalidade(Localidade localidade) {
-		this.localidade = localidade;
-	}
-		
 	public Distrito getDistrito() {
 		return distrito;
 	}
@@ -73,7 +65,6 @@ public class Bairro implements Serializable {
 	public void setDistrito(Distrito distrito) {
 		this.distrito = distrito;
 	}
-
 	
 	@Override
 	public int hashCode() {
@@ -82,7 +73,7 @@ public class Bairro implements Serializable {
 		result = prime * result + ((codigo == null) ? 0 : codigo.hashCode());
 		return result;
 	}
-
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -91,7 +82,7 @@ public class Bairro implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Bairro other = (Bairro) obj;
+		TeamLeader other = (TeamLeader) obj;
 		if (codigo == null) {
 			if (other.codigo != null)
 				return false;
@@ -99,7 +90,6 @@ public class Bairro implements Serializable {
 			return false;
 		return true;
 	}
-	
 	
 
 }

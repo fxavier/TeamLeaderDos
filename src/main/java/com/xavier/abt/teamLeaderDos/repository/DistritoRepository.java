@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.xavier.abt.teamLeaderDos.model.Distrito;
 
-public interface DistritoRepository extends JpaRepository<Distrito, Long> {
+public interface DistritoRepository extends JpaRepository<Distrito, Long>{
 
 }
