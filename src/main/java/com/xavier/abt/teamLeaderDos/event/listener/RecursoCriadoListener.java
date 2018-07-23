@@ -24,7 +24,7 @@ public class RecursoCriadoListener implements ApplicationListener<RecursoCriadoE
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{codigo}")
 				.buildAndExpand(codigo).toUri();
 		
-		response.setHeader("Locatio", uri.toASCIIString());
+		response.setHeader("Location", uri.toASCIIString());
 		
 	}
 

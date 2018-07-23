@@ -45,9 +45,6 @@ public class Distrito implements Serializable{
 		this.nome = nome;
 	}
 	
-	public boolean isNovo() {
-		return codigo == null;
-	}
 
 	@Override
 	public int hashCode() {
