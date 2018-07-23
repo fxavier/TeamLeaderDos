@@ -12,7 +12,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -37,10 +36,6 @@ public class Bairro implements Serializable {
 	@JoinColumn(name = "codigo_localidade")
 	@NotNull
 	private Localidade localidade;
-	
-	@Transient
-	@NotNull
-	private Distrito distrito;
 
 	public Long getCodigo() {
 		return codigo;
@@ -66,14 +61,6 @@ public class Bairro implements Serializable {
 		this.localidade = localidade;
 	}
 		
-	public Distrito getDistrito() {
-		return distrito;
-	}
-
-	public void setDistrito(Distrito distrito) {
-		this.distrito = distrito;
-	}
-
 	
 	@Override
 	public int hashCode() {
