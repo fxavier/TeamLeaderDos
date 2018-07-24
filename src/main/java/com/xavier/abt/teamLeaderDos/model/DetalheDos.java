@@ -3,7 +3,6 @@
  */
 package com.xavier.abt.teamLeaderDos.model;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 
 import javax.persistence.Column;
@@ -19,71 +18,64 @@ import javax.validation.constraints.NotNull;
 
 
 /**
- * @author langar
+ * @author xavier
  *
  */
 @Entity
 @Table(name = "detalhes_tldos")
-public class DetalheDos implements Serializable{
+public class DetalheDos {
 		
-	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
-	
 		
-	@Column(name = "referencia_detalhes")
-	private String referencia;
-	
-	@Column(name = "codigo_totalDos")
-	private Long codigoTotalDos;
-	
-	@NotNull(message = "A data é obrigatória")
+	@NotNull
 	private LocalDate data;
 	
-			
-	@ManyToOne
-	@JoinColumn(name = "codigo_bairro")
-	@NotNull(message = "O Bairro é obrigatório")
-	private Bairro bairro;
-	
 	@Column(name = "SOPMixFor75")
-	@NotNull(message = "Todos os campos sao obrigatorios")
-	
+	@NotNull
 	private String sopMixFor75;
 	
 	@Column(name = "SOPEnxaugou3vezes")
-	@NotNull(message = "Todos os campos sao obrigatorios")
+	@NotNull
 	private String sopEnxaugou3vezes;
 	
 	@Column(name = "SOPTemEPICompleto")
-	@NotNull(message = "Todos os campos sao obrigatorios")
+	@NotNull
 	private String sopTemEPICompleto;
 	
 	@Column(name = "SOPPulvComBombaComCntFluxo")
-	@NotNull(message = "Todos os campos sao obrigatorios")
+	@NotNull
 	private String sopPulvComBombaComCntFluxo;	
 
-	@NotNull(message = "Todos os campos sao obrigatorios")
+	@NotNull
 	private String todosPertencesForaCasa;	
 
-	@NotNull(message = "Todos os campos sao obrigatorios")
+	@NotNull
 	private String todosPertencesNTiradosCobertos;
 	
-	@NotNull(message = "Todos os campos sao obrigatorios")
+	@NotNull
 	private String existeVazamentoBomba;
 	
 	@Column(name = "SOPPulvComDist45cmParede")
-	@NotNull(message = "Todos os campos sao obrigatorios")
+	@NotNull
 	private String sopPulvComDist45cmParede;
 	
 	@Column(name = "SOPMantemVelocCorrecta")
-	@NotNull(message = "Todos os campos sao obrigatorios")
+	@NotNull
 	private String sopMantemVelocCorrecta;
 	
-	@NotNull(message = "Todos os campos sao obrigatorios")
+	@NotNull
 	private String existeSubreposicao5cm;
+	
+	@ManyToOne
+	@JoinColumn(name = "codigo_totalDos")
+    private TotaisTlDos totaisTlDos;
+	
+	@ManyToOne
+	@JoinColumn(name = "codigo_roceador")
+	private Roceador roceador;
 	
 
 	public LocalDate getData() {
@@ -95,27 +87,6 @@ public class DetalheDos implements Serializable{
 		this.data = data;
 	}
 	
-
-	public Bairro getBairro() {
-		return bairro;
-	}
-
-
-
-	public void setBairro(Bairro bairro) {
-		this.bairro = bairro;
-	}
-
-	public Long getCodigoTotalDos() {
-		return codigoTotalDos;
-	}
-
-
-	public void setCodigoTotalDos(Long codigoTotalDos) {
-		this.codigoTotalDos = codigoTotalDos;
-	}
-
-
 	public Long getCodigo() {
 		return codigo;
 	}
@@ -123,14 +94,21 @@ public class DetalheDos implements Serializable{
 	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
 	}
-	
-    
+	    
+	public TotaisTlDos getTotaisTlDos() {
+		return totaisTlDos;
+	}
+
+
+	public void setTotaisTlDos(TotaisTlDos totaisTlDos) {
+		this.totaisTlDos = totaisTlDos;
+	}
+
+
 	public String getSopMixFor75() {
 		return sopMixFor75;
 	}
 
-
-    
 	public void setSopMixFor75(String sopMixFor75) {
 		this.sopMixFor75 = sopMixFor75;
 	}
@@ -206,16 +184,14 @@ public class DetalheDos implements Serializable{
 	public void setExisteSubreposicao5cm(String existeSubreposicao5cm) {
 		this.existeSubreposicao5cm = existeSubreposicao5cm;
 	}
-	
-		
 
-	public String getReferencia() {
-		return referencia;
+	public Roceador getRoceador() {
+		return roceador;
 	}
 
 
-	public void setReferencia(String referencia) {
-		this.referencia = referencia;
+	public void setRoceador(Roceador roceador) {
+		this.roceador = roceador;
 	}
 
 

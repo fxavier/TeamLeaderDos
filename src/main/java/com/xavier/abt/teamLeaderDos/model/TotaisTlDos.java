@@ -3,7 +3,6 @@
  */
 package com.xavier.abt.teamLeaderDos.model;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 
 import javax.persistence.Column;
@@ -14,361 +13,286 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 /**
-* @author langar
+* @author
  *
  */
 @Entity
-@Table(name = "totais_tldos")
-public class TotaisTlDos implements Serializable{
-	
-	private static final long serialVersionUID = 1L;
-	
-		
+@Table(name = "totais_dos")
+public class TotaisTlDos {
+			
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long codigo;
-	
-	
-	@Column(name = "referencia_totais")
-	private String referencia;
 	
 	@NotNull
 	private LocalDate data;
 	
 	@NotNull
-	@Min(0)
-	@Max(value = 9999, message = "tem um valor muito alto")
-	@Column(name = "SOPMixFor75Sim")
-	private Long sopMixFor75Sim;
+	@Column(name = "sop_mix_for75_sim")
+	private Long SOPMixFor75Sim;
 	
 	@NotNull
-	@Min(0)
-	@Max(value = 9999, message = "tem um valor muito alto")
-	@Column(name = "SOPMixFor75Nao")
-	private Long sopMixFor75Nao;
+	@Column(name = "sop_mix_for75_nao")
+	private Long SOPMixFor75Nao;
+	    
+	@NotNull
+	@Column(name = "sop_enxaugou_sim")
+    private Long SOPEnxaugou3vezesSim;
 	
 	@NotNull
-	@Min(0)
-	@Max(value = 9999, message = "tem um valor muito alto")
-	@Column(name = "SOPEnxaugou3vezesSim")
-	private Long sopEnxaugou3vezesSim;
-	
+	@Column(name = "sop_enxaugou_nao")
+    private Long SOPEnxaugou3vezesNao;
+	    
 	@NotNull
-	@Min(0)
-	@Max(value = 9999, message = "tem um valor muito alto")
-	@Column(name = "SOPEnxaugou3vezesNao")
-	private Long sopEnxaugou3vezesNao;
-	
+	@Column(name = "sop_tem_epi_sim")
+    private Long SOPTemEPICompletoSim;
+	    
 	@NotNull
-	@Min(0)
-	@Max(value = 9999, message = "tem um valor muito alto")
-	@Column(name = "SOPTemEPICompletoSim")
-	private Long sopTemEPICompletoSim;
-	
+	@Column(name = "sop_tem_epi_nao")
+	private Long SOPTemEPICompletoNao;
+	    
 	@NotNull
-	@Min(0)
-	@Max(value = 9999, message = "tem um valor muito alto")
-	@Column(name = "SOPTemEPICompletoNao")
-	private Long sopTemEPICompletoNao;
-	
+	@Column(name = "sop_pul_comcntflx_sim")
+	private Long SOPPulvComBombaComCntFluxoSim;
+	    
 	@NotNull
-	@Min(0)
-	@Max(value = 9999, message = "tem um valor muito alto")
-	@Column(name = "SOPPulvComBombaComCntFluxoSim")
-	private Long sopPulvComBombaComCntFluxoSim;
-	
+	@Column(name = "sop_pul_comcntflx_nao")
+	private Long SOPPulvComBombaComCntFluxoNao;
+	 
 	@NotNull
-	@Min(0)
-	@Max(value = 9999, message = "tem um valor muito alto")
-	@Column(name = "SOPPulvComBombaComCntFluxoNao")
-	private Long sopPulvComBombaComCntFluxoNao;
-	
-	@NotNull
-	@Min(0)
-	@Max(value = 9999, message = "tem um valor muito alto")
-	@Column(name = "todosPertencesForaCasaSim")
+	@Column(name = "todos_pert_fora_sim")
 	private Long todosPertencesForaCasaSim;
-	
+	  
 	@NotNull
-	@Min(0)
-	@Max(value = 9999, message = "tem um valor muito alto")
-	@Column(name = "todosPertencesForaCasaNao")
+	@Column(name = "todos_pert_fora_nao")
 	private Long todosPertencesForaCasaNao;
-	
+	  
 	@NotNull
-	@Min(0)
-	@Max(value = 9999, message = "tem um valor muito alto")
-	@Column(name = "todosPertencesNTiradosCobertosSim")
+	@Column(name = "todos_naotirados_cob_sim")
 	private Long todosPertencesNTiradosCobertosSim;
-	
+	  
 	@NotNull
-	@Min(0)
-	@Max(value = 9999, message = "tem um valor muito alto")
-	@Column(name = "todosPertencesNTiradosCobertosNao")
-	private Long todosPertencesNTiradosCobertosNao;
-	
+	@Column(name = "todos_naotirados_cob_nao")
+    private Long todosPertencesNTiradosCobertosNao;
+	 
 	@NotNull
-	@Min(0)
-	@Max(value = 9999, message = "tem um valor muito alto")
-	@Column(name = "existeVazamentoBombaSim")
+	@Column(name = "vazamento_sim")
 	private Long existeVazamentoBombaSim;
-	
+	 
 	@NotNull
-	@Min(0)
-	@Max(value = 9999, message = "tem um valor muito alto")
-	@Column(name = "existeVazamentoBombaNao")
+	@Column(name = "vazamento_nao")
 	private Long existeVazamentoBombaNao;
-	
+	    
 	@NotNull
-	@Min(0)
-	@Max(value = 9999, message = "tem um valor muito alto")
-	@Column(name = "SOPPulvComDist45cmParedeSim")
-	private Long sopPulvComDist45cmParedeSim;
-	
+	@Column(name = "sop_pulvdist45_parede_sim")
+	private Long SOPPulvComDist45cmParedeSim;
+	    
 	@NotNull
-	@Min(0)
-	@Max(value = 9999, message = "tem um valor muito alto")
-	@Column(name = "SOPPulvComDist45cmParedeNao")
-	private Long sopPulvComDist45cmParedeNao;
-	
+	@Column(name = "sop_pulvdist45_parede_nao")
+	private Long SOPPulvComDist45cmParedeNao;
+	    
 	@NotNull
-	@Min(0)
-	@Max(value = 9999, message = "tem um valor muito alto")
-	@Column(name = "SOPMantemVelocCorrectaSim")
-	private Long sopMantemVelocCorrectaSim;
-	
+	@Column(name = "sop_mantem_vcerta_sim")
+	private Long SOPMantemVelocCorrectaSim;
+	   
 	@NotNull
-	@Min(0)
-	@Max(value = 9999, message = "tem um valor muito alto")
-	@Column(name = "SOPMantemVelocCorrectaNao")
-	private Long sopMantemVelocCorrectaNao;
-	
+	@Column(name = "sop_mantem_vcerta_nao")
+	private Long SOPMantemVelocCorrectaNao;
+	    
 	@NotNull
-	@Min(0)
-	@Max(value = 9999, message = "tem um valor muito alto")
-	@Column(name = "existeSubreposicao5cmSim")
+	@Column(name = "exist_sobrep5_sim")
 	private Long existeSubreposicao5cmSim;
-	
+	    
 	@NotNull
-	@Min(0)
-	@Max(value = 9999, message = "tem um valor muito alto")
-	@Column(name = "existeSubreposicao5cmNao")
+	@Column(name = "exist_sobrep5_nao")
 	private Long existeSubreposicao5cmNao;
-	
-		
-		
-	@ManyToOne
-	@JoinColumn(name = "codigo_bairro")
-	@NotNull
-	private Bairro bairro;
+	    
+	 @ManyToOne
+	 @JoinColumn(name = "codigo_teamleader")
+	 private TeamLeader teamLeader;   
+	    
+	 @ManyToOne
+	 @JoinColumn(name = "codigo_bairro")
+	 private Bairro bairro;
+	    
+	    public Long getCodigo() {
+			return codigo;
+		}
 
-	public Long getCodigo() {
-		return codigo;
-	}
-	
-  
-	public void setCodigo(Long codigo) {
-		this.codigo = codigo;
-	}
+		public void setCodigo(Long codigo) {
+			this.codigo = codigo;
+		}
 
-	public LocalDate getData() {
-		return data;
-	}
+		public LocalDate getData() {
+			return data;
+		}
 
-	public void setData(LocalDate data) {
-		this.data = data;
-	}
+		public void setData(LocalDate data) {
+			this.data = data;
+		}
 
-	public Long getSopMixFor75Sim() {
-		return sopMixFor75Sim;
-	}
+		public Long getSOPMixFor75Sim() {
+			return SOPMixFor75Sim;
+		}
 
-	public void setSopMixFor75Sim(Long sopMixFor75Sim) {
-		this.sopMixFor75Sim = sopMixFor75Sim;
-	}
+		public void setSOPMixFor75Sim(Long sOPMixFor75Sim) {
+			SOPMixFor75Sim = sOPMixFor75Sim;
+		}
 
-	public Long getSopMixFor75Nao() {
-		return sopMixFor75Nao;
-	}
+		public Long getSOPMixFor75Nao() {
+			return SOPMixFor75Nao;
+		}
 
-	public void setSopMixFor75Nao(Long sopMixFor75Nao) {
-		this.sopMixFor75Nao = sopMixFor75Nao;
-	}
+		public void setSOPMixFor75Nao(Long sOPMixFor75Nao) {
+			SOPMixFor75Nao = sOPMixFor75Nao;
+		}
 
-	public Long getSopEnxaugou3vezesSim() {
-		return sopEnxaugou3vezesSim;
-	}
+		public Long getSOPEnxaugou3vezesSim() {
+			return SOPEnxaugou3vezesSim;
+		}
 
-	public void setSopEnxaugou3vezesSim(Long sopEnxaugou3vezesSim) {
-		this.sopEnxaugou3vezesSim = sopEnxaugou3vezesSim;
-	}
+		public void setSOPEnxaugou3vezesSim(Long sOPEnxaugou3vezesSim) {
+			SOPEnxaugou3vezesSim = sOPEnxaugou3vezesSim;
+		}
 
-	public Long getSopEnxaugou3vezesNao() {
-		return sopEnxaugou3vezesNao;
-	}
+		public Long getSOPEnxaugou3vezesNao() {
+			return SOPEnxaugou3vezesNao;
+		}
 
-	public void setSopEnxaugou3vezesNao(Long sopEnxaugou3vezesNao) {
-		this.sopEnxaugou3vezesNao = sopEnxaugou3vezesNao;
-	}
+		public void setSOPEnxaugou3vezesNao(Long sOPEnxaugou3vezesNao) {
+			SOPEnxaugou3vezesNao = sOPEnxaugou3vezesNao;
+		}
 
-	public Long getSopTemEPICompletoSim() {
-		return sopTemEPICompletoSim;
-	}
+		public Long getSOPTemEPICompletoSim() {
+			return SOPTemEPICompletoSim;
+		}
 
-	public void setSopTemEPICompletoSim(Long sopTemEPICompletoSim) {
-		this.sopTemEPICompletoSim = sopTemEPICompletoSim;
-	}
+		public void setSOPTemEPICompletoSim(Long sOPTemEPICompletoSim) {
+			SOPTemEPICompletoSim = sOPTemEPICompletoSim;
+		}
 
-	public Long getSopTemEPICompletoNao() {
-		return sopTemEPICompletoNao;
-	}
+		public Long getSOPTemEPICompletoNao() {
+			return SOPTemEPICompletoNao;
+		}
 
-	public void setSopTemEPICompletoNao(Long sopTemEPICompletoNao) {
-		this.sopTemEPICompletoNao = sopTemEPICompletoNao;
-	}
+		public void setSOPTemEPICompletoNao(Long sOPTemEPICompletoNao) {
+			SOPTemEPICompletoNao = sOPTemEPICompletoNao;
+		}
 
-	public Long getSopPulvComBombaComCntFluxoSim() {
-		return sopPulvComBombaComCntFluxoSim;
-	}
+		public Long getSOPPulvComBombaComCntFluxoSim() {
+			return SOPPulvComBombaComCntFluxoSim;
+		}
 
-	public void setSopPulvComBombaComCntFluxoSim(Long sopPulvComBombaComCntFluxoSim) {
-		this.sopPulvComBombaComCntFluxoSim = sopPulvComBombaComCntFluxoSim;
-	}
+		public void setSOPPulvComBombaComCntFluxoSim(Long sOPPulvComBombaComCntFluxoSim) {
+			SOPPulvComBombaComCntFluxoSim = sOPPulvComBombaComCntFluxoSim;
+		}
 
-	public Long getSopPulvComBombaComCntFluxoNao() {
-		return sopPulvComBombaComCntFluxoNao;
-	}
+		public Long getSOPPulvComBombaComCntFluxoNao() {
+			return SOPPulvComBombaComCntFluxoNao;
+		}
 
-	public void setSopPulvComBombaComCntFluxoNao(Long sopPulvComBombaComCntFluxoNao) {
-		this.sopPulvComBombaComCntFluxoNao = sopPulvComBombaComCntFluxoNao;
-	}
+		public void setSOPPulvComBombaComCntFluxoNao(Long sOPPulvComBombaComCntFluxoNao) {
+			SOPPulvComBombaComCntFluxoNao = sOPPulvComBombaComCntFluxoNao;
+		}
 
-	public Long getTodosPertencesForaCasaSim() {
-		return todosPertencesForaCasaSim;
-	}
+		public Long getTodosPertencesForaCasaSim() {
+			return todosPertencesForaCasaSim;
+		}
 
-	public void setTodosPertencesForaCasaSim(Long todosPertencesForaCasaSim) {
-		this.todosPertencesForaCasaSim = todosPertencesForaCasaSim;
-	}
+		public void setTodosPertencesForaCasaSim(Long todosPertencesForaCasaSim) {
+			this.todosPertencesForaCasaSim = todosPertencesForaCasaSim;
+		}
 
-	public Long getTodosPertencesForaCasaNao() {
-		return todosPertencesForaCasaNao;
-	}
+		public Long getTodosPertencesForaCasaNao() {
+			return todosPertencesForaCasaNao;
+		}
 
-	public void setTodosPertencesForaCasaNao(Long todosPertencesForaCasaNao) {
-		this.todosPertencesForaCasaNao = todosPertencesForaCasaNao;
-	}
+		public void setTodosPertencesForaCasaNao(Long todosPertencesForaCasaNao) {
+			this.todosPertencesForaCasaNao = todosPertencesForaCasaNao;
+		}
 
-	public Long getTodosPertencesNTiradosCobertosSim() {
-		return todosPertencesNTiradosCobertosSim;
-	}
+		public Long getTodosPertencesNTiradosCobertosSim() {
+			return todosPertencesNTiradosCobertosSim;
+		}
 
-	public void setTodosPertencesNTiradosCobertosSim(Long todosPertencesNTiradosCobertosSim) {
-		this.todosPertencesNTiradosCobertosSim = todosPertencesNTiradosCobertosSim;
-	}
+		public void setTodosPertencesNTiradosCobertosSim(Long todosPertencesNTiradosCobertosSim) {
+			this.todosPertencesNTiradosCobertosSim = todosPertencesNTiradosCobertosSim;
+		}
 
-	public Long getTodosPertencesNTiradosCobertosNao() {
-		return todosPertencesNTiradosCobertosNao;
-	}
+		public Long getTodosPertencesNTiradosCobertosNao() {
+			return todosPertencesNTiradosCobertosNao;
+		}
 
-	public void setTodosPertencesNTiradosCobertosNao(Long todosPertencesNTiradosCobertosNao) {
-		this.todosPertencesNTiradosCobertosNao = todosPertencesNTiradosCobertosNao;
-	}
+		public void setTodosPertencesNTiradosCobertosNao(Long todosPertencesNTiradosCobertosNao) {
+			this.todosPertencesNTiradosCobertosNao = todosPertencesNTiradosCobertosNao;
+		}
 
-	public Long getExisteVazamentoBombaSim() {
-		return existeVazamentoBombaSim;
-	}
+		public Long getExisteVazamentoBombaSim() {
+			return existeVazamentoBombaSim;
+		}
 
-	public void setExisteVazamentoBombaSim(Long existeVazamentoBombaSim) {
-		this.existeVazamentoBombaSim = existeVazamentoBombaSim;
-	}
+		public void setExisteVazamentoBombaSim(Long existeVazamentoBombaSim) {
+			this.existeVazamentoBombaSim = existeVazamentoBombaSim;
+		}
 
-	public Long getExisteVazamentoBombaNao() {
-		return existeVazamentoBombaNao;
-	}
+		public Long getExisteVazamentoBombaNao() {
+			return existeVazamentoBombaNao;
+		}
 
-	public void setExisteVazamentoBombaNao(Long existeVazamentoBombaNao) {
-		this.existeVazamentoBombaNao = existeVazamentoBombaNao;
-	}
+		public void setExisteVazamentoBombaNao(Long existeVazamentoBombaNao) {
+			this.existeVazamentoBombaNao = existeVazamentoBombaNao;
+		}
 
-	public Long getSopPulvComDist45cmParedeSim() {
-		return sopPulvComDist45cmParedeSim;
-	}
+		public Long getSOPPulvComDist45cmParedeSim() {
+			return SOPPulvComDist45cmParedeSim;
+		}
 
-	public void setSopPulvComDist45cmParedeSim(Long sopPulvComDist45cmParedeSim) {
-		this.sopPulvComDist45cmParedeSim = sopPulvComDist45cmParedeSim;
-	}
+		public void setSOPPulvComDist45cmParedeSim(Long sOPPulvComDist45cmParedeSim) {
+			SOPPulvComDist45cmParedeSim = sOPPulvComDist45cmParedeSim;
+		}
 
-	public Long getSopPulvComDist45cmParedeNao() {
-		return sopPulvComDist45cmParedeNao;
-	}
+		public Long getSOPPulvComDist45cmParedeNao() {
+			return SOPPulvComDist45cmParedeNao;
+		}
 
-	public void setSopPulvComDist45cmParedeNao(Long sopPulvComDist45cmParedeNao) {
-		this.sopPulvComDist45cmParedeNao = sopPulvComDist45cmParedeNao;
-	}
+		public void setSOPPulvComDist45cmParedeNao(Long sOPPulvComDist45cmParedeNao) {
+			SOPPulvComDist45cmParedeNao = sOPPulvComDist45cmParedeNao;
+		}
 
-	public Long getSopMantemVelocCorrectaSim() {
-		return sopMantemVelocCorrectaSim;
-	}
+		public Long getSOPMantemVelocCorrectaSim() {
+			return SOPMantemVelocCorrectaSim;
+		}
 
-	public void setSopMantemVelocCorrectaSim(Long sopMantemVelocCorrectaSim) {
-		this.sopMantemVelocCorrectaSim = sopMantemVelocCorrectaSim;
-	}
+		public void setSOPMantemVelocCorrectaSim(Long sOPMantemVelocCorrectaSim) {
+			SOPMantemVelocCorrectaSim = sOPMantemVelocCorrectaSim;
+		}
 
-	public Long getSopMantemVelocCorrectaNao() {
-		return sopMantemVelocCorrectaNao;
-	}
+		public Long getSOPMantemVelocCorrectaNao() {
+			return SOPMantemVelocCorrectaNao;
+		}
 
-	public void setSopMantemVelocCorrectaNao(Long sopMantemVelocCorrectaNao) {
-		this.sopMantemVelocCorrectaNao = sopMantemVelocCorrectaNao;
-	}
+		public void setSOPMantemVelocCorrectaNao(Long sOPMantemVelocCorrectaNao) {
+			SOPMantemVelocCorrectaNao = sOPMantemVelocCorrectaNao;
+		}
 
-	public Long getExisteSubreposicao5cmSim() {
-		return existeSubreposicao5cmSim;
-	}
+		public Long getExisteSubreposicao5cmSim() {
+			return existeSubreposicao5cmSim;
+		}
 
-	public void setExisteSubreposicao5cmSim(Long existeSubreposicao5cmSim) {
-		this.existeSubreposicao5cmSim = existeSubreposicao5cmSim;
-	}
+		public void setExisteSubreposicao5cmSim(Long existeSubreposicao5cmSim) {
+			this.existeSubreposicao5cmSim = existeSubreposicao5cmSim;
+		}
 
-	public Long getExisteSubreposicao5cmNao() {
-		return existeSubreposicao5cmNao;
-	}
+		public Long getExisteSubreposicao5cmNao() {
+			return existeSubreposicao5cmNao;
+		}
 
-	public void setExisteSubreposicao5cmNao(Long existeSubreposicao5cmNao) {
-		this.existeSubreposicao5cmNao = existeSubreposicao5cmNao;
-	}
-
-	
-
-	public Bairro getBairro() {
-		return bairro;
-	}
-
-	public void setBairro(Bairro bairro) {
-		this.bairro = bairro;
-	}
-	
-
-	public String getReferencia() {
-		return referencia;
-	}
-
-
-	public void setReferencia(String referencia) {
-		this.referencia = referencia;
-	}
-
-	
-	public boolean isNovo() {
-		return this.codigo == null;
-	}
-	
+		public void setExisteSubreposicao5cmNao(Long existeSubreposicao5cmNao) {
+			this.existeSubreposicao5cmNao = existeSubreposicao5cmNao;
+		}
 
 	@Override
 	public int hashCode() {
